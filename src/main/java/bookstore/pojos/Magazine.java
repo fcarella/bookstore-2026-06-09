@@ -10,7 +10,7 @@ public class Magazine extends Publication {
     public Magazine() {
     }
 
-    public Magazine(int orderQty, Date currentIssue, String title, double price, int copies) {
+    public Magazine(int orderQty, Date currentIssue, String title, Double price, int copies) {
         super(title, price, copies);
         this.orderQty = orderQty;
         this.currentIssue = currentIssue;
@@ -26,7 +26,6 @@ public class Magazine extends Publication {
         System.out.println("Enter Current Issue Date (dd-MMM-yyyy):");
         this.currentIssue = getInput(input, new Date());
 
-        super.initPriceCopies(input); // Copies, Price
     }
 
     @Override

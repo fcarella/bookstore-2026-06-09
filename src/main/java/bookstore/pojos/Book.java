@@ -14,7 +14,7 @@ public class Book extends Publication {
         this.author = author;
     }
 
-    public Book(String author, String title, double price, int copies) {
+    public Book(String author, String title, Double price, int copies) {
         super(title, price, copies);
         this.author = author;
     }
@@ -26,8 +26,8 @@ public class Book extends Publication {
         System.out.println("Enter Author:");
         this.author = getInput(input, "Unknown Author");
 
-        // Pass scanner to helper
-        super.initPriceCopies(input);
+//        // Pass scanner to helper
+//        super.initPriceCopies(input);
     }
 
     @Override

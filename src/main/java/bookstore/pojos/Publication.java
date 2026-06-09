@@ -5,13 +5,22 @@ import java.util.Scanner;
 
 public abstract class Publication extends Product {
     private String title = "";
-    private double price = 0.0;
+    private Double price = 0.0;
     private int copies = 0;
+
+    @Override
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
     public Publication() {
     }
 
-    public Publication(String title, double price, int copies) {
+    public Publication(String title, Double price, int copies) {
         this.title = title;
         this.price = price;
         this.copies = copies;
@@ -31,10 +40,7 @@ public abstract class Publication extends Product {
     public void initialize(Scanner input) {
         System.out.println("Enter Title:");
         this.title = getInput(input, "Available Title");
-    }
 
-    // Pass scanner to helper
-    protected void initPriceCopies(Scanner input) {
         System.out.println("Enter copies:");
         this.copies = getInput(input, 0);
 
@@ -52,14 +58,6 @@ public abstract class Publication extends Product {
 
         System.out.println("Edit Copies [" + this.copies + "]:");
         this.copies = getInput(input, this.copies);
-    }
-    @Override
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public String getTitle() {

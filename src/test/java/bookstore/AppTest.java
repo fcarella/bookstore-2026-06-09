@@ -25,10 +25,10 @@ class AppTest {
         // --- ADD BOOK ---
         script.append("1\n");             // Main Menu: Add Items
         script.append("1\n");             // Add Menu: Add Book
-        script.append("Dune\n");          // Title
-        script.append("Frank Herbert\n"); // Author
-        script.append("10\n");            // Copies
-        script.append("25.00\n");         // Price
+        script.append("Dune\n");          // 1. Title
+        script.append("10\n");            // 2. Copies
+        script.append("25.00\n");         // 3. Price
+        script.append("Frank Herbert\n"); // 4. Author
         script.append("99\n");            // Exit Add Menu
 
         // --- EDIT BOOK ---

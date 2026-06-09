@@ -1,10 +1,11 @@
 package bookstore.pojos;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Ticket extends Product {
     private String description = "";
-    private double price = 0.0;
+    private Double price = 0.0;
 
     @Override
     public void sellItem() {
@@ -12,7 +13,7 @@ public class Ticket extends Product {
     }
 
     @Override
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
@@ -33,7 +34,7 @@ public class Ticket extends Product {
         this.description = description;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -49,5 +50,18 @@ public class Ticket extends Product {
     @Override
     public String toString() {
         return "Ticket{desc='" + description + "', price=" + price + "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Ticket ticket = (Ticket) o;
+        return Objects.equals(description, ticket.description) && Objects.equals(price, ticket.price);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), description, price);
     }
 }

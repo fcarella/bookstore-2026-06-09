@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BookTest {
 
-    // Helper method to create bookstore-2026-01-30.mmd Scanner from bookstore-2026-01-30.mmd String
+    // Helper method to create Scanner from String
     private Scanner createMockScanner(String input) {
         return new Scanner(new ByteArrayInputStream(input.getBytes()));
     }
@@ -30,10 +30,10 @@ class BookTest {
         // 1. Prepare the Script
         // Order in Code:
         //   1. super.initialize() -> Title
-        //   2. this.initialize()  -> Author
-        //   3. super.initPriceCopies() -> Copies
-        //   4. super.initPriceCopies() -> Price
-        String inputData = "Dune\nFrank Herbert\n10\n25.00\n";
+        //   2. super.initialize() -> Copies
+        //   3. super.initialize() -> Price
+        //   4. this.initialize()  -> Author
+        String inputData = "Dune\n10\n25.00\nFrank Herbert\n";
         Scanner mockScanner = createMockScanner(inputData);
 
         // 2. Execute

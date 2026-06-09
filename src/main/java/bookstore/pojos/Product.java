@@ -1,6 +1,7 @@
 package bookstore.pojos;
 
 import java.io.Serializable;
+import java.util.Objects;
 import java.util.UUID;
 
 // Marked abstract because it implements SaleableItem but doesn't implement getPrice()
@@ -26,5 +27,17 @@ public abstract class Product extends Editable implements SaleableItem, Serializ
         return "Product{" +
                 "productId='" + productId + '\'' +
                 "} ";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Objects.equals(productId, product.productId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(productId);
     }
 }
